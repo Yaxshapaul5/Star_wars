@@ -1,0 +1,10 @@
+.app-container {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom left, #d6e5f3, #e7edf1);
+    overflow-y: hidden; 
+    color: black; /* Use black for better text visibility */
+}

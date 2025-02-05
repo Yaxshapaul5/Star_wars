@@ -1,0 +1,250 @@
+.container {
+    padding: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #e9ad09; /* Light blue Star Wars effect */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(15, 15, 14, 0.5);
+    font-family: 'Star Jedi', sans-serif; /* Star Wars-like font */
+    font-style: italic; /* Makes the title italic */
+}
+
+
+/* Characters Grid */
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 cards per row on larger screens */
+    gap: 24px;
+    padding: 20px;
+}
+
+@media (max-width: 1024px) {
+    .characters-grid {
+        grid-template-columns: repeat(3, 1fr); /* Adjusts to 3 per row for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .characters-grid {
+        grid-template-columns: repeat(2, 1fr); /* Stacks them on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .characters-grid {
+        grid-template-columns: 1fr; /* Stacks them on extra small screens */
+    }
+}
+
+/* Character Card */
+.character-card {
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Hover Animation */
+.character-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Species-Based Background Colors */
+.species-human {
+    background-color: #be5c5c;
+} /* Light blue */
+.species-droid {
+    background-color: #8daee0;
+} /* Grey */
+.species-wookiee {
+    background-color: #e4d26d;
+} /* Light brown */
+.species-default {
+    background-color: #f7f9fa;
+} /* Neutral grey */
+
+/* Character Image */
+.character-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+/* Character Name */
+.character-name {
+    font-size: 1.0rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+/* Character Details */
+.character-details {
+    font-size: 0.875rem;
+    color: #555;
+}
+
+.character-details p {
+    margin: 4px 0;
+}
+
+/* Loading Animation */
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #4f51b6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.pagination-button {
+    width: 20px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3498db;
+    color: white !important; /* Ensures the icon is white */
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.0rem; /* Adjust icon size */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+
+.pagination-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.pagination-button:hover:not(:disabled) {
+    background-color: #c2ddf0;
+    transform: scale(1.1);
+}
+
+
+.page-info {
+    padding: 8px 16px;
+}
+
+
+/* Alert Messages */
+.alert {
+    max-width: 32rem;
+    margin: 16px auto;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+}
+
+.alert.destructive {
+    background-color: #fee2e2;
+    border-color: #fecaca;
+    color: #dc2626;
+}
+
+.alert-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.alert-description {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.alert.destructive .alert-description {
+    color: #b91c1c;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px); /* Adds a subtle blur */
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    color: #333;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+    position: relative;
+    text-align: center;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #333;
+    background: none; /* Remove background */
+    outline: none; /* Remove focus outline */
+}
+
+.close-button:hover {
+    color: red;
+}
+
+  
