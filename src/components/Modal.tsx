@@ -2,6 +2,17 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
+interface Character {
+  name: string;
+  height: string;
+  mass: string;
+  birth_year: string;
+  films: string[];
+  created: string;
+  homeworld?: string;
+}
+
+
 interface ModalProps {
   character: Character | null;
   onClose: () => void;
