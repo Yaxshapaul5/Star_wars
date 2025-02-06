@@ -32,9 +32,9 @@ export interface ApiResponse {
 const speciesColors: { [key: string]: string } = {
     "https://swapi.dev/api/species/1/": "#e4d26d",
     "https://swapi.dev/api/species/2/": "#C0C0C0", 
-    "https://swapi.dev/api/species/3/": "#4f51b6", // Wookiee - BlueViolet
-    "https://swapi.dev/api/species/4/": "#be5c5c", // Rodian - Brown
-    "default": "#8daee0" // Default color - SteelBlue
+    "https://swapi.dev/api/species/3/": "#4f51b6",
+    "https://swapi.dev/api/species/4/": "#be5c5c",
+    "default": "#8daee0" 
 };
 
 const StarWarsCharacters = () => {
@@ -45,6 +45,7 @@ const StarWarsCharacters = () => {
     const [totalPages, setTotalPages] = useState<number>(0);
     const [selectedCharacter, setSelectedCharacter] = useState<Character | null>(null);
 
+    //later will do
     const fetchCharacters = async (page: number): Promise<void> => {
         setLoading(true);
         setError(null);
@@ -77,7 +78,7 @@ const StarWarsCharacters = () => {
                 <Heading>Star Wars Universe</Heading>
                 <Subtext>Explore the legendary characters from a galaxy far, far away...</Subtext>
             </Header>
-            
+        {/* will find */}
             <CharactersGrid>
                 {loading ? (
                     <LoaderContainer>
@@ -93,7 +94,7 @@ const StarWarsCharacters = () => {
                            <ProfileImage
     src={`https://starwars-visualguide.com/assets/img/characters/${character.url.match(/(\d+)\/$/)?.[1]}.jpg`}
     alt={character.name}
-    onError={(e) => (e.currentTarget.src = "/fallback-image.jpg")}
+    onError={(e) => (e.currentTarget.src = "/../images.png")}
 />
 
                             <CardContent>
@@ -103,7 +104,7 @@ const StarWarsCharacters = () => {
                     ))
                 )}
             </CharactersGrid>
-
+{/* do it later */}
             {!loading && (
                 <PaginationContainer>
                     <PaginationButton

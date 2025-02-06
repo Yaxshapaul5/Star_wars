@@ -6,5 +6,5 @@
     justify-content: center;
     background: linear-gradient(to bottom left, #d6e5f3, #e7edf1);
     overflow-y: hidden; 
-    color: black; /* Use black for better text visibility */
+    color: black; 
 }

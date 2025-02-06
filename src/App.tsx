@@ -1,6 +1,6 @@
 import React from "react";
 import CharacterList from "./components/StarWarsCharacters";
-import "./styles.css"; // Import the CSS file
+import "./styles.css"; 
 
 const App: React.FC = () => {
   return (

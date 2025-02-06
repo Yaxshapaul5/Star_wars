@@ -1,4 +1,3 @@
-// Alert.tsx
 import React from 'react';
 import './style.css';
 
